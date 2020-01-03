@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  test_service:
     build: ./
     entrypoint:
       - flask
@@ -10,5 +10,7 @@ services:
     environment:
       FLASK_DEBUG: 1
       FLASK_APP: ./main.py
+    env_file:
+      - dev.env
     ports: ['8080:8080']
     volumes: ['./:/app']
